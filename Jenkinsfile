@@ -14,14 +14,14 @@ pipeline {
 
         stage('Build Docker Images') {
             steps {
-                sh 'sudo ${DOCKER_COMPOSE} build'
+                sh '${DOCKER_COMPOSE} build'
             }
         }
 
         stage('Deploy Containers') {
             steps {
-                sh 'sudo ${DOCKER_COMPOSE} down'
-                sh 'sudo ${DOCKER_COMPOSE} up -d'
+                sh '${DOCKER_COMPOSE} down'
+                sh '${DOCKER_COMPOSE} up -d'
             }
         }
     }
